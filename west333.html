@@ -70,7 +70,7 @@ justify-content: center;
   background: none;
   border: none;
   font-size: 2rem;
-  color: #fff;
+  color: #7d7d7d;
   cursor: pointer;
   z-index: 10; /* Ensure it's above other elements */
 }
@@ -94,19 +94,26 @@ justify-content: center;
 .Navmenu-toggle .bar {
   width: 25px;
   height: 3px;
-  background-color: #007BFF;
+  background-color: #000000;
   transition: all 0.3s ease;
 }
+.mainnav-links-linksdivs{
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    width: 60%;
+}
 /* Responsive Design */
+
 
 @media (max-width: 768px) {
   .mainNv {
   padding: em;
-  background: #000000;
+  background: #fcf9f9;
   border: 1px solid #ddd;
   box-shadow: 0 4px 6px rgb(12, 46, 179);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-
+    
  
 }
 
@@ -120,7 +127,7 @@ justify-content: center;
 
   .Navmenu-toggle {
     display: flex;
-    background: #882d2d;
+    background: #fcf9f9;
     
     
   }
@@ -128,30 +135,53 @@ justify-content: center;
   .logo img {
     display: block;
   }
-  
 
   .mainnav-links {
     position: fixed;
     top: 0;
     right: -100%; /* Hidden by default */
     flex-direction: column;
-    background: #000; /* Add background for visibility */
-    height: 100vh;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    transition: right 0.3s ease-in-out;
+    background: #000000; /* Add background for visibility */
+    height: 60vh;
+    width: 54%;
+    justify-content: start;
+    align-items: start;
+    transition: right 0.7s ease-in-out;
     z-index: 19; /* Above content but below toggle */
     overflow-y: auto; /* Allow scrolling if the content overflows */
+    text-align: start;
+    border-top-left-radius: 4rem ;
+    border-left: 5px solid rgba(243, 24, 24, 0.919);
+    border-bottom-left-radius: 4rem;
+   
   }
+  
   
   .mainnav-links.show {
     right: 0; /* Make visible */
   }
   
   .mainnav-links li {
-    margin: 1rem 0; /* Space between links */
+    margin: -3px 0; /* Space between links */
     font-size: 13px;
+    width: auto;
+   min-height: 6rem;
+   
+  }
+
+ .mainnav-links-linksdivs{
+    display: block;
+    margin-top: 7em;
+   
+    justify-content: start;
+    text-align: start;
+    left: 0;
+    height: 20em;
+    overflow: hidden;
+    margin-left: 15px;
+  }
+  .mainnav-links-linksdivs li a{
+    color: rgb(255, 255, 255);
   }
   .mainnav-links li a{
     font-size: 20px;
@@ -591,10 +621,13 @@ margin-bottom: 20px;
           <!-- Navigation Links -->
           <ul class="mainnav-links" id="mainnavLinks">
             <button class="closeNav-toggle" id="closeNavToggle">✕</button>
-            <li><a href="index.html">Buy</a></li>
-            <li><a href="Rentals.html">Rent</a></li>
-            <li><a href="Application.html">Application</a></li>
-            <li><a href="agent.html">Agents</a></li>
+            <div class="mainnav-links-linksdivs">
+                <li><a href="index.html">Buy</a></li>
+                <li><a href="Rentals.html">Rent</a></li>
+                <li><a href="Application.html">Application</a></li>
+                <li><a href="agent.html">Agents</a></li>
+            </div>
+            
             
           </ul>
         </div>
