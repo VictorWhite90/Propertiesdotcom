@@ -614,7 +614,7 @@ filter: brightness(80%);
 
 .property-details {
 padding: 15px;
-text-align: left;
+text-align: start;
 }
 
 .property-title {
@@ -735,6 +735,10 @@ justify-content: center;
     width: 100%;
     margin: auto;
     padding: 30px 0;
+    text-align:   start;
+    
+}
+.featured-realtors-header{
     text-align: center;
 }
 
@@ -829,17 +833,22 @@ color: white;
 }
 
 .view-all-realtors {
+    display: flex;
+    justify-content: center;
 background: red;
 color: white;
 border: none;
 padding: 10px 20px;
 border-radius: 5px;
 cursor: pointer;
-margin: px auto;
+margin: 20px auto;
+
 }
+
 .view-all-realtors a{
     color: white;
     text-decoration: none;
+    text-align: center;
 }
 
 .view-all-realtors:hover {
@@ -1027,7 +1036,7 @@ margin-bottom: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #00f181;
+            background-color: #d007b5;
             color: black;
             font-size: 16px;
             font-weight: bold;
@@ -1038,7 +1047,7 @@ margin-bottom: 20px;
             transition: 0.3s;
             width: 200px;
             text-decoration: none;
-            margin: 0 200px;
+            margin: 0 179px;
         }
 
         .btn-primary:hover {
@@ -1280,7 +1289,7 @@ margin-bottom: 20px;
 
     
     <section class="featured-realtors">
-        <h2>Featured <em>Agents</em></h2>
+        <h2 class="featured-realtors-header">Featured <em>Agents</em></h2>
         <div class="realtor-grid">
             <div class="realtor-card">
                 <img src="img/favagent.jpg" alt="Jill Steingart">

@@ -69,8 +69,9 @@ justify-content: center;
   right: 10px;
   background: none;
   border: none;
-  font-size: 2rem;
-  color: #7d7d7d;
+  font-size: 1.3rem;
+  color: #a5a5a5;
+  color: #b3b3b3;
   cursor: pointer;
   z-index: 10; /* Ensure it's above other elements */
 }
@@ -135,6 +136,7 @@ justify-content: center;
     display: block;
   }
 
+
   .mainnav-links {
     position: fixed;
     top: 0;
@@ -142,7 +144,7 @@ justify-content: center;
     flex-direction: column;
     background: #000000; /* Add background for visibility */
     height: 60vh;
-    width: 54%;
+    width: 46%;
     justify-content: start;
     align-items: start;
     transition: right 0.7s ease-in-out;
@@ -150,7 +152,7 @@ justify-content: center;
     overflow-y: auto; /* Allow scrolling if the content overflows */
     text-align: start;
     border-top-left-radius: 4rem ;
-    border-left: 5px solid rgba(243, 24, 24, 0.919);
+    border-left: 3px solid rgba(243, 24, 24, 0.919);
     border-bottom-left-radius: 4rem;
    
   }
@@ -167,23 +169,19 @@ justify-content: center;
    min-height: 6rem;
    
   }
-
  .mainnav-links-linksdivs{
     display: block;
     margin-top: 7em;
-   
+    width: 100%;
+    margin-left: -1.4rem;
     justify-content: start;
     text-align: start;
     left: 0;
-    height: 20em;
     overflow: hidden;
-    margin-left: 15px;
-  }
-  .mainnav-links-linksdivs li a{
-    color: rgb(255, 255, 255);
+    
   }
   .mainnav-links li a{
-    font-size: 20px;
+    font-size: 15px;
   }
 
 
@@ -684,9 +682,12 @@ margin-bottom: 20px;
                 <div><strong>Condominium</strong> Type</div>
                 <div><strong>RLS11031203</strong> MLS#</div>
                    <!-- Apply Now Button -->
-                <button class="apply-btn" data-bs-toggle="modal" data-bs-target="#rentalModal">
-                    Apply Now
-                </button>
+                    <a href="Application.html">
+                        <button class="apply-btn">
+                            Apply Now
+                        </button>
+                    </a>
+           
                 
             </div>
 
@@ -747,167 +748,7 @@ margin-bottom: 20px;
     </div>
         <!-- Bootstrap Modal -->
            <!-- Bootstrap Modal -->
-           <div class="modal fade" id="rentalModal" tabindex="-1" aria-labelledby="rentalModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="rentalModalLabel">House Rental Application</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form id="rentalForm">
-                            <!-- Full Name -->
-                            <div class="mb-3">
-                                <label for="name" class="form-label">Full Name</label>
-                                <input type="text" class="form-control" id="name" name="user_name" placeholder="Enter your full name" required>
-                            </div>
-        
-                            <!-- Email -->
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="email" name="user_email" placeholder="Enter your email" required>
-                            </div>
-        
-                            <!-- Phone Number -->
-                            <div class="mb-3">
-                                <label for="phone" class="form-label">Phone Number</label>
-                                <input type="tel" class="form-control" id="phone" name="user_phone" placeholder="Enter your phone number" required>
-                            </div>
-        
-                            <!-- Landlord's Phone Number -->
-                            <div class="mb-3">
-                                <label for="landlord_phone" class="form-label">Landlord's Phone Number</label>
-                                <input type="tel" class="form-control" id="landlord_phone" name="landlord_phone" placeholder="Enter landlord's phone number" required>
-                            </div>
-        
-                            <!-- Date of Birth -->
-                            <div class="mb-3">
-                                <label for="dob" class="form-label">Date of Birth</label>
-                                <input type="date" class="form-control" id="dob" name="dob" required>
-                            </div>
-        
-                            <!-- Current Address -->
-                            <div class="mb-3">
-                                <label for="address" class="form-label">Current Address</label>
-                                <input type="text" class="form-control" id="address" name="address" placeholder="Enter your current address" required>
-                            </div>
-        
-                            <!-- Length of Tenancy -->
-                            <div class="mb-3">
-                                <label for="tenancy_length" class="form-label">Length of Tenancy (in years)</label>
-                                <input type="number" class="form-control" id="tenancy_length" name="tenancy_length" placeholder="Enter length of tenancy" required>
-                            </div>
-        
-                            <!-- Monthly Salary with Currency -->
-                            <div class="mb-3">
-                                <label for="salary" class="form-label">Monthly Salary</label>
-                                <div class="input-group">
-                                    <select class="form-select" id="currency" name="currency" required>
-                                        <option value="$">$ (USD)</option>
-                                        <option value="€">€ (EUR)</option>
-                                        <option value="₦">₦ (NGN)</option>
-                                        <option value="£">£ (GBP)</option>
-                                    </select>
-                                    <input type="number" class="form-control" id="salary" name="salary" placeholder="Enter your salary" required>
-                                </div>
-                            </div>
-        
-                            <!-- Budget for Apartment -->
-                            <div class="mb-3">
-                                <label class="form-label">Budget for Apartment</label><br>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="budget" value="700-2000" required>
-                                    <label class="form-check-label">$700 - $2,000</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="budget" value="2000-5000">
-                                    <label class="form-check-label">$2,000 - $5,000</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="budget" value="5000-9000">
-                                    <label class="form-check-label">$5,000 - $9,000</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="budget" value="9000+">
-                                    <label class="form-check-label">$9,000+</label>
-                                </div>
-                            </div>
-        
-                            <!-- Preferred Payment Method -->
-                            <div class="mb-3">
-                                <label class="form-label">Preferred Payment Method</label><br>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="payment_method" value="Zelle">
-                                    <label class="form-check-label">Zelle</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="payment_method" value="CashApp">
-                                    <label class="form-check-label">CashApp</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="payment_method" value="PayPal">
-                                    <label class="form-check-label">PayPal</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="payment_method" value="Crypto">
-                                    <label class="form-check-label">Crypto</label>
-                                </div>
-                            </div>
-        
-                            <!-- Date for Apartment Checking -->
-                            <div class="mb-3">
-                                <label for="check_date" class="form-label">Date for Apartment Checking</label>
-                                <input type="date" class="form-control" id="check_date" name="check_date" required>
-                            </div>
-        
-                            <!-- Date for Payment -->
-                            <div class="mb-3">
-                                <label for="payment_date" class="form-label">Date for Payment</label>
-                                <input type="date" class="form-control" id="payment_date" name="payment_date" required>
-                            </div>
-        
-                            <!-- Eviction Status -->
-                            <div class="mb-3">
-                                <label class="form-label">Have you ever been evicted from an apartment?</label><br>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="evicted" value="Yes" required>
-                                    <label class="form-check-label">Yes</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="evicted" value="No">
-                                    <label class="form-check-label">No</label>
-                                </div>
-                            </div>
-        
-                            <!-- Pets -->
-                            <div class="mb-3">
-                                <label class="form-label">Do you have pets?</label><br>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="pets" value="Yes" required>
-                                    <label class="form-check-label">Yes</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="pets" value="No">
-                                    <label class="form-check-label">No</label>
-                                </div>
-                            </div>
-        
-                            <!-- Acknowledgment -->
-                            <div class="mb-3">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="acknowledge" required>
-                                    <label class="form-check-label">
-                                        I acknowledge that all information provided is accurate.
-                                    </label>
-                                </div>
-                            </div>
-        
-                            <button type="submit" class="btn btn-primary w-100">Submit Application</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
+    
         
         
     <h4 class="text-center">Other featured-listing</h4>

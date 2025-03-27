@@ -70,8 +70,8 @@ justify-content: center;
   right: 10px;
   background: none;
   border: none;
-  font-size: 2rem;
-  color: #7d7d7d;
+  font-size: 1.3rem;
+  color: #a5a5a5;
   cursor: pointer;
   z-index: 10; /* Ensure it's above other elements */
 }
@@ -143,7 +143,7 @@ justify-content: center;
     flex-direction: column;
     background: #000000; /* Add background for visibility */
     height: 60vh;
-    width: 54%;
+    width: 46%;
     justify-content: start;
     align-items: start;
     transition: right 0.7s ease-in-out;
@@ -151,7 +151,7 @@ justify-content: center;
     overflow-y: auto; /* Allow scrolling if the content overflows */
     text-align: start;
     border-top-left-radius: 4rem ;
-    border-left: 5px solid rgba(243, 24, 24, 0.919);
+    border-left: 3px solid rgba(243, 24, 24, 0.919);
     border-bottom-left-radius: 4rem;
    
   }
@@ -168,23 +168,19 @@ justify-content: center;
    min-height: 6rem;
    
   }
-
  .mainnav-links-linksdivs{
     display: block;
     margin-top: 7em;
-   
+    width: 100%;
+    margin-left: -1.4rem;
     justify-content: start;
     text-align: start;
     left: 0;
-    height: 20em;
     overflow: hidden;
-    margin-left: 15px;
-  }
-  .mainnav-links-linksdivs li a{
-    color: rgb(255, 255, 255);
+    
   }
   .mainnav-links li a{
-    font-size: 20px;
+    font-size: 15px;
   }
 
 
@@ -681,9 +677,11 @@ margin-bottom: 20px;
                 <div><strong>Condominium</strong> Type</div>
                 <div><strong>RLS11031203</strong> MLS#</div>
                    <!-- Apply Now Button -->
-                <button class="apply-btn" data-bs-toggle="modal" data-bs-target="#rentalModal">
-                    Apply Now
-                </button>
+                   <a href="Application.html">
+                    <button class="apply-btn">
+                        Apply Now
+                    </button>
+                </a>
                 
             </div>
 
