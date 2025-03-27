@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Galada&family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Pompiere&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="preload" href="img/nyrk2.jpg" as="image">
+
     <style>
         
     @import url('https://fonts.googleapis.com/css2?family=Galada&family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Pompiere&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
@@ -82,10 +84,11 @@ justify-content: center;
   right: 10px;
   background: none;
   border: none;
-  font-size: 2rem;
-  color: #7d7d7d;
+  font-size: 1.3rem;
+  color: #a5a5a5;
   cursor: pointer;
-  height: 55px;
+ 
+  
   z-index: 10; /* Ensure it's above other elements */
 }
 
@@ -156,7 +159,7 @@ justify-content: center;
     flex-direction: column;
     background: #000000; /* Add background for visibility */
     height: 60vh;
-    width: 40%;
+    width: 46%;
     justify-content: start;
     align-items: start;
     transition: right 0.7s ease-in-out;
@@ -184,6 +187,7 @@ justify-content: center;
  .mainnav-links-linksdivs{
     display: block;
     margin-top: 7em;
+    width: 100%;
     margin-left: -1.4rem;
     justify-content: start;
     text-align: start;
@@ -200,7 +204,7 @@ justify-content: center;
 
        
 .hero {
-    background: url("img/nyrk2.jpg") no-repeat center center/cover;
+    background: #ccc url("img/nyrk2-small.jpg") no-repeat center center/cover;
     height: 500px;
     position: relative;
     display: flex;
@@ -1015,7 +1019,7 @@ margin-bottom: 20px;
         }
         .position-relative{
             animation:  colorChanges 5s infinite;
-            font-size: 26px;
+            font-size: 19px;
             font-weight: bold;
             text-align: center;
         }
@@ -1457,5 +1461,8 @@ margin-bottom: 20px;
 
     typeBigText();
 </script>
+<script>window.onload = function() {
+    document.querySelector(".hero").style.backgroundImage = 'url("img/nyrk2.jpg")';
+};</script>
 </div>
 </html>
