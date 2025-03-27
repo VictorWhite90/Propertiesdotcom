@@ -5,13 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Real Estate Page</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Galada&family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Pompiere&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <style>
-    
+        
+    @import url('https://fonts.googleapis.com/css2?family=Galada&family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Pompiere&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
     *{
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-     
+        font-family: "Poppins", sans-serif;
         overflow-x: hidden;
     }
     body{
@@ -151,7 +156,7 @@ justify-content: center;
     flex-direction: column;
     background: #000000; /* Add background for visibility */
     height: 60vh;
-    width: 54%;
+    width: 40%;
     justify-content: start;
     align-items: start;
     transition: right 0.7s ease-in-out;
@@ -159,7 +164,7 @@ justify-content: center;
     overflow-y: auto; /* Allow scrolling if the content overflows */
     text-align: start;
     border-top-left-radius: 4rem ;
-    border-left: 1px solid rgba(243, 24, 24, 0.919);
+    border-left: 3px solid rgba(243, 24, 24, 0.919);
     border-bottom-left-radius: 4rem;
    
   }
@@ -179,13 +184,15 @@ justify-content: center;
  .mainnav-links-linksdivs{
     display: block;
     margin-top: 7em;
+    margin-left: -1.4rem;
     justify-content: start;
     text-align: start;
     left: 0;
     overflow: hidden;
+    
   }
   .mainnav-links li a{
-    font-size: 20px;
+    font-size: 15px;
   }
 
 
@@ -299,6 +306,7 @@ color: white;
 font-size: 14px;
 text-align: center;
 border-radius: 5px;
+ font-family: "Galada", cursive;
 }
 
 .listing-btn a {
@@ -348,7 +356,7 @@ color: gray;
 }
 
 .listing-price {
-color: red;
+color: rgb(52, 6, 6);
 font-size: 18px;
 }
 
@@ -356,7 +364,7 @@ font-size: 18px;
 .feature-listing-header {
     flex-direction: column;
     align-items: center;
-    text-align: center;
+    text-align: start;
 }
 
 .listing-container {
@@ -395,7 +403,7 @@ border-radius: 10px;
 overflow: hidden;
 width: 300px;
 box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-text-align: center;
+text-align: start;
 }
 
 .featured-card img, .featured-card2 img {
@@ -558,7 +566,7 @@ font-weight: bold;
 
 /* Featured Listings Section */
 .property-section {
-text-align: center;
+text-align: start;
 padding: 50px 20px;
 }
 
@@ -823,7 +831,11 @@ border: none;
 padding: 10px 20px;
 border-radius: 5px;
 cursor: pointer;
-margin-top: 20px;
+margin: px auto;
+}
+.view-all-realtors a{
+    color: white;
+    text-decoration: none;
 }
 
 .view-all-realtors:hover {
@@ -994,6 +1006,76 @@ padding-bottom: 15px;
 border-bottom: 1px solid gray;
 margin-bottom: 20px;
 }
+@keyframes colorChanges {
+            0% { color: rgb(200, 255, 0); }
+            25% { color: rgb(246, 209, 172); }
+            50% { color: rgb(66, 221, 19); }
+            75% { color: rgb(255, 255, 255); }
+            100% { color: rgb(255, 126, 201); }
+        }
+        .position-relative{
+            animation:  colorChanges 5s infinite;
+            font-size: 26px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .btn-primary {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #00f181;
+            color: black;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 5px 6px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 200px;
+            text-decoration: none;
+            margin: 0 200px;
+        }
+
+        .btn-primary:hover {
+            background-color: #7ce0af;
+        }
+
+        /* Outline Button */
+        .btn-outline {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 12px 24px;
+            border: 2px solid black;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+            background-color: transparent;
+            color: black;
+        }
+
+        .btn-outline:hover {
+            background-color: black;
+            color: white;
+        }
+
+        /* Arrow icon */
+        .arrows {
+            margin-left: 8px;
+            font-size: 30px;
+            transition: transform 0.3s;
+            color: #e0dddd;
+        }
+
+        .btn-primary:hover .arrows,
+        .btn-outline:hover .arrows {
+            transform: translateX(5px);
+        }
+
   </style>
 </head>
 
@@ -1054,7 +1136,7 @@ margin-bottom: 20px;
         
         <section class="hero">
             <div class="hero-overlay"></div>
-            <div class="position-relative">Discover the Best Properties in New York</div>
+            <div class="position-relative"></div>
         </section>
     
   
@@ -1163,10 +1245,12 @@ margin-bottom: 20px;
 
 
  
-    
-    <section class="Leaddership">
-        <p>Leaddership</p>
-    </section>
+    <idv class="btn-primary">
+        Leadership<span class="arrows"><svg class="arrow" width="" height="12" viewBox="0 0 24 12" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 6h20M14 0l6 6-6 6" stroke="white" stroke-width="2" fill="none"/>
+        </svg>
+        </span>
+          </div>
     
         <section class="agents-section">
         <div class="agent-card">
@@ -1358,5 +1442,20 @@ margin-bottom: 20px;
     });
 });
   </script>
+  <script>
+    const bigText = document.querySelector('.position-relative');
+    const newText = 'Discover the Best Properties in New York';
+    let currentIndex = 0;
+
+    function typeBigText() {  // Renamed function
+        if (currentIndex < newText.length) {
+            bigText.textContent += newText[currentIndex];
+            currentIndex++;
+            setTimeout(typeBigText, 200);
+        }
+    }
+
+    typeBigText();
+</script>
 </div>
 </html>
