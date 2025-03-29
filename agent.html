@@ -141,7 +141,7 @@ justify-content: center;
     flex-direction: column;
     background: #000000; /* Add background for visibility */
     height: 60vh;
-    width: 54%;
+    width: 46%;
     justify-content: start;
     align-items: start;
     transition: right 0.7s ease-in-out;
@@ -167,22 +167,22 @@ justify-content: center;
    
   }
 
- .mainnav-links-linksdivs{
+  .mainnav-links-linksdivs{
     display: block;
     margin-top: 7em;
-   
+    width: 100%;
+    margin-left: -1.4rem;
     justify-content: start;
     text-align: start;
     left: 0;
-    height: 20em;
     overflow: hidden;
-    margin-left: 15px;
+    
   }
   .mainnav-links-linksdivs li a{
     color: rgb(255, 255, 255);
   }
   .mainnav-links li a{
-    font-size: 20px;
+    font-size: 15px;
   }
 
 
@@ -435,6 +435,7 @@ textarea {
    .row{
     text-align: start;
    }
+   
     </style> 
 </head>
 <body>
@@ -581,62 +582,57 @@ textarea {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         // Sample agent data
-     const agents = [
-         { name: "Shane Boyle", role: "Sales Representative", phone: "+1 (424) 600-5756", license: "DRE 01918229 (CA)", img: "img/favagent.jpg" },
-         { name: "Lily Anderson", role: "Agent", phone: "+1 (310) 299-3171", license: "DRE 02180086 (CA)", img: "img/real2.jpg" },
-         { name: "Ayanna Richards", role: "Broker Associate", phone: "+1 (719) 232-7455", license: "DRE 2157481 (CA)", img:"img/real13.jpg" },
-         { name: "Desmond Walker", role: "Agent", phone: "+1 (313) 801-1018", license: "6506042244 (MI)", img: "img/agnt 5.png" },
-         { name: "Sade Montgomery", role: "Agent", phone: "+1 (480) 621-1244", license: "50191251 (NV)", img: "img/real4.jpg" },
-         { name: "Benjamin Harper", role: "Agent, South Bay", phone: "+1 (517) 290-0355", license: "FA100094849", img: "img/real5.jpg" },
-         { name: "Matthew Flora", role: "Agent", phone: "+1 (469) 485-2260", license: "SA546370000 (AZ)", img: "img/agent5.png" },
-         { name: "Henry Dawson", role: "Agent | Service Coordinator", phone: "+1 (347) 928-7622", license: "DRE 01963659 (CA)", img: "img/real7.jpg" },
-         { name: "Aaron Erwin", role: "Sales Representative", phone: "+1 (424) 600-5756", license: "DRE 01918229 (CA)", img: "img/real1.jpg" },
-        
-         { name: "Elijah Grant", role: "Agent | Service Coordinator", phone: "+1 (347) 928-7622", license: "DRE 01963659 (CA)", img: "img/real15.jpg" },
-        
-         { name: "Isabella Carter", role: "Agent | Service Coordinator", phone: "+1 (347) 928-7622", license: "DRE 01963659 (CA)", img: "img/real10.jpg" },
-        
-         { name: "Charlotte Davies", role: "Agent | Service Coordinator", phone: "+1 (347) 928-7622", license: "DRE 01963659 (CA)", img: "img/real11.jpg" },
-         { name: "Imani Douglas", role: "Agent | Service Coordinator", phone: "+1 (347) 928-7622", license: "DRE 01963659 (CA)", img: "img/real12.jpg" },
-         { name: "Jaden Coleman", role: "Agent | Service Coordinator", phone: "+1 (347) 928-7622", license: "DRE 01963659 (CA)", img: "img/joshua.jpg" },
-         { name: "Olivia Bennett", role: "Agent | Service Coordinator", phone: "+1 (347) 928-7622", license: "DRE 01963659 (CA)", img: "img/real16.png" },
-         { name: "Fortune Mitchell", role: "Agent | Service Coordinator", phone: "+1 (347) 928-7622", license: "DRE 01963659 (CA)", img: "img/real3.jpg" },
-        
-     ];
-     
-     
-     const agentsPerPage = 8; // Adjust this as needed
-     let currentPage = 1;
-     
-     // Function to display agents for the current page
-     function displayAgents(page) {
-         const start = (page - 1) * agentsPerPage;
-         const end = start + agentsPerPage;
-         const visibleAgents = agents.slice(start, end);
-     
-         const container = document.getElementById("agents-container");
-         container.innerHTML = ""; // Clear previous agents
-     
-         visibleAgents.forEach(agent => {
-             container.innerHTML += `
-                 <div class="col-md-3">
-                     <div class="agent-box">
-                         <img src="${agent.img}" alt="${agent.name}">
-                         <div class="details-section">
-                             <h5><em>${agent.name}</em></h5>
-                             <p><strong>${agent.role}</strong></p>
-                             <p>${agent.phone}</p>
-                             <p>License: ${agent.license}</p>
-                             <a href="#" class="contact-button">Email Me</a>
-                         </div>
-                     </div>
-                 </div>
-             `;
-         });
-     
-         setupEmailButtons(); // ✅ Reattach event listeners to new "Email Me" buttons
-     }
-     
+        const agents = [
+    { name: "Shane Boyle", role: "Sales Representative", specialty: "Luxury Property Specialist", img: "img/favagent.jpg" },
+    { name: "Lily Anderson", role: "Agent", specialty: "Helping First-Time Homebuyers", img: "img/real2.jpg" },
+    { name: "Ayanna Richards", role: "Broker Associate", specialty: "Serving Los Angeles & Orange County", img: "img/real13.jpg" },
+    { name: "Desmond Walker", role: "Agent", specialty: "Expert in Waterfront Properties", img: "img/agent2.jpg" },
+    { name: "Sade Montgomery", role: "Agent", specialty: "Relocation & Investment Properties", img: "img/real4.jpg" },
+    { name: "Benjamin Harper", role: "Agent, South Bay", specialty: "South Bay & Coastal Homes", img: "img/real5.jpg" },
+    { name: "Matthew Flora", role: "Agent", specialty: "Experienced in Commercial Real Estate", img: "img/agent5.png" },
+    { name: "Henry Dawson", role: "Agent | Service Coordinator", specialty: "Client-Focused Negotiation Expert", img: "img/real7.jpg" },
+    { name: "Aaron Erwin", role: "Sales Representative", specialty: "Luxury Homes & Estates", img: "img/real1.jpg" },
+    { name: "Elijah Grant", role: "Agent | Service Coordinator", specialty: "Expert in High-Rise Condos", img: "img/real15.jpg" },
+    { name: "Isabella Carter", role: "Agent | Service Coordinator", specialty: "NYC & Long Island Real Estate", img: "img/real10.jpg" },
+    { name: "Charlotte Davies", role: "Agent | Service Coordinator", specialty: "Personalized Home Buying Experience", img: "img/real11.jpg" },
+    { name: "Imani Douglas", role: "Agent | Service Coordinator", specialty: "Downtown Living Specialist", img: "img/real12.jpg" },
+    { name: "Jaden Coleman", role: "Agent | Service Coordinator", specialty: "New Construction Homes", img: "img/joshua.jpg" },
+    { name: "Olivia Bennett", role: "Agent | Service Coordinator", specialty: "Family-Friendly Neighborhood Expert", img: "img/real16.png" },
+    { name: "Fortune Mitchell", role: "Agent | Service Coordinator", specialty: "Historic Homes & Renovations", img: "img/real3.jpg" },
+    
+];
+
+const agentsPerPage = 8; // Adjust as needed
+let currentPage = 1;
+
+// Function to display agents for the current page
+function displayAgents(page) {
+    const start = (page - 1) * agentsPerPage;
+    const end = start + agentsPerPage;
+    const visibleAgents = agents.slice(start, end);
+
+    const container = document.getElementById("agents-container");
+    container.innerHTML = ""; // Clear previous agents
+
+    visibleAgents.forEach(agent => {
+        container.innerHTML += `
+            <div class="col-md-3">
+                <div class="agent-box">
+                    <img src="${agent.img}" alt="${agent.name}">
+                    <div class="details-section">
+                        <h5><em>${agent.name}</em></h5>
+                        <p><strong>${agent.role}</strong></p>
+                        <p>${agent.specialty}</p>
+                        <a href="#" class="contact-button">Email Me</a>
+                    </div>
+                </div>
+            </div>
+        `;
+    });
+
+    setupEmailButtons(); // ✅ Reattach event listeners to new "Email Me" buttons
+}
+ 
      // Function to setup pagination
      function setupPagination() {
          const pageCount = Math.ceil(agents.length / agentsPerPage);
