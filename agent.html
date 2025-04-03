@@ -435,6 +435,19 @@ textarea {
    .row{
     text-align: start;
    }
+   .agent-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.agent-box {
+    transition: transform 0.2s ease-in-out;
+}
+
+.agent-link:hover .agent-box {
+    transform: scale(1.03); /* Slight zoom effect */
+}
    
     </style> 
 </head>
@@ -580,10 +593,10 @@ textarea {
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Sample agent data
-        const agents = [
-    { name: "Shane Boyle", role: "Sales Representative", specialty: "Luxury Property Specialist", img: "img/favagent.jpg" },
+   <script>
+    // Sample agent data
+const agents = [
+    { name: "Shane Boyle", role: "11 times agent of the month with compass luxury now sales representative at propertiesdotcom.", specialty: "Luxury Property Specialist", img: "img/favagent.jpg" },
     { name: "Lily Anderson", role: "Agent", specialty: "Helping First-Time Homebuyers", img: "img/real2.jpg" },
     { name: "Ayanna Richards", role: "Broker Associate", specialty: "Serving Los Angeles & Orange County", img: "img/real13.jpg" },
     { name: "Desmond Walker", role: "Agent", specialty: "Expert in Waterfront Properties", img: "img/agent2.jpg" },
@@ -599,7 +612,6 @@ textarea {
     { name: "Jaden Coleman", role: "Agent | Service Coordinator", specialty: "New Construction Homes", img: "img/joshua.jpg" },
     { name: "Olivia Bennett", role: "Agent | Service Coordinator", specialty: "Family-Friendly Neighborhood Expert", img: "img/real16.png" },
     { name: "Fortune Mitchell", role: "Agent | Service Coordinator", specialty: "Historic Homes & Renovations", img: "img/real3.jpg" },
-    
 ];
 
 const agentsPerPage = 8; // Adjust as needed
@@ -614,8 +626,8 @@ function displayAgents(page) {
     const container = document.getElementById("agents-container");
     container.innerHTML = ""; // Clear previous agents
 
-    visibleAgents.forEach(agent => {
-        container.innerHTML += `
+    visibleAgents.forEach((agent, index) => {
+        let agentCardHTML = `
             <div class="col-md-3">
                 <div class="agent-box">
                     <img src="${agent.img}" alt="${agent.name}">
@@ -628,110 +640,132 @@ function displayAgents(page) {
                 </div>
             </div>
         `;
+
+        // Make only the first agent's card clickable
+        if (index === 0 && page === 1) {
+            agentCardHTML = `
+                <div class="col-md-3">
+                    <a href="f.html" target="_blank" class="agent-link">
+                        <div class="agent-box">
+                            <img src="${agent.img}" alt="${agent.name}">
+                            <div class="details-section">
+                                <h5><em>${agent.name}</em></h5>
+                                <p><strong>${agent.role}</strong></p>
+                                <p>${agent.specialty}</p>
+                                <a href="#" class="contact-button">Email Me</a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            `;
+        }
+
+        container.innerHTML += agentCardHTML;
     });
 
     setupEmailButtons(); // ✅ Reattach event listeners to new "Email Me" buttons
 }
- 
-     // Function to setup pagination
-     function setupPagination() {
-         const pageCount = Math.ceil(agents.length / agentsPerPage);
-         const paginationContainer = document.getElementById("pagination-container");
-         paginationContainer.innerHTML = ""; // Clear previous pagination
-     
-         for (let i = 1; i <= pageCount; i++) {
-             const pageLink = document.createElement("a");
-             pageLink.textContent = i;
-             pageLink.href = "#";
-             pageLink.classList.add("page-link");
-             if (i === currentPage) {
-                 pageLink.classList.add("active");
-             }
-             pageLink.addEventListener("click", (e) => {
-                 e.preventDefault();
-                 currentPage = i;
-                 displayAgents(currentPage); // Updates agent list
-                 setupPagination(); // Updates pagination
-             });
-             paginationContainer.appendChild(pageLink);
-         }
-     }
-     // Function to setup event listeners for "Email Me" buttons
-     function setupEmailButtons() {
-         document.querySelectorAll(".contact-button").forEach(button => {
-             button.removeEventListener("click", showModal); // Prevent duplicate event listeners
-             button.addEventListener("click", showModal);
-         });
-     }
-     
-     // Function to handle modal popup
-     function showModal(event) {
-         event.preventDefault();
-         const agentCard = this.closest(".agent-box");
-         const agentName = agentCard.querySelector("h5 em").textContent;
-         document.getElementById("agentName").textContent = `Contact ${agentName}`;
-         document.getElementById("emailModal").style.display = "block";
-     }
-     
-     // Function to close the email modal
-     function setupModal() {
-         const modal = document.getElementById("emailModal");
-         const closeModal = document.querySelector(".close");
-     
-         closeModal.addEventListener("click", function () {
-             modal.style.display = "none";
-         });
-     
-         window.addEventListener("click", function (event) {
-             if (event.target === modal) {
-                 modal.style.display = "none";
-             }
-         });
-     }
-     
-     // ✅ Run everything on page load
-     document.addEventListener("DOMContentLoaded", function () {
-         displayAgents(currentPage);
-         setupPagination();
-         setupModal();
-         setupEmailButtons(); // ✅ Make sure buttons work
-     
-         // Ensure modals are hidden on page load
-         document.getElementById("emailModal").style.display = "none";
-         document.getElementById("thankYouModal").style.display = "none";
-     
-         // Form Submission Handler (Prevents accidental submission)
-         document.querySelector("form").addEventListener("submit", function (event) {
-             event.preventDefault(); // Stop actual form submission
-             document.getElementById("emailModal").style.display = "none";
-             document.getElementById("thankYouModal").style.display = "flex"; 
-         });
-     
-         // Close Thank You Modal when clicking the close button
-         document.getElementById("closeThankYouBtn").addEventListener("click", function () {
-             document.getElementById("thankYouModal").style.display = "none";
-         });
-     
-         // Close Thank You Modal when clicking (X)
-         document.querySelector(".close-thankyou").addEventListener("click", function () {
-             document.getElementById("thankYouModal").style.display = "none";
-         });
-     
-         // Close modal if user clicks outside the modal
-         window.addEventListener("click", function (event) {
-             if (event.target === document.getElementById("thankYouModal")) {
-                 document.getElementById("thankYouModal").style.display = "none";
-             }
-         });
-     });
-     
-     // Ensure modals are hidden on refresh
-     window.onload = function() {
-         document.getElementById("emailModal").style.display = "none";
-         document.getElementById("thankYouModal").style.display = "none";
-     };
-     
-     </script>
+
+// Function to setup pagination
+function setupPagination() {
+    const pageCount = Math.ceil(agents.length / agentsPerPage);
+    const paginationContainer = document.getElementById("pagination-container");
+    paginationContainer.innerHTML = ""; // Clear previous pagination
+
+    for (let i = 1; i <= pageCount; i++) {
+        const pageLink = document.createElement("a");
+        pageLink.textContent = i;
+        pageLink.href = "#";
+        pageLink.classList.add("page-link");
+        if (i === currentPage) {
+            pageLink.classList.add("active");
+        }
+        pageLink.addEventListener("click", (e) => {
+            e.preventDefault();
+            currentPage = i;
+            displayAgents(currentPage); // Updates agent list
+            setupPagination(); // Updates pagination
+        });
+        paginationContainer.appendChild(pageLink);
+    }
+}
+
+// Function to setup event listeners for "Email Me" buttons
+function setupEmailButtons() {
+    document.querySelectorAll(".contact-button").forEach(button => {
+        button.removeEventListener("click", showModal); // Prevent duplicate event listeners
+        button.addEventListener("click", showModal);
+    });
+}
+
+// Function to handle modal popup
+function showModal(event) {
+    event.preventDefault();
+    const agentCard = this.closest(".agent-box");
+    const agentName = agentCard.querySelector("h5 em").textContent;
+    document.getElementById("agentName").textContent = `Contact ${agentName}`;
+    document.getElementById("emailModal").style.display = "block";
+}
+
+// Function to close the email modal
+function setupModal() {
+    const modal = document.getElementById("emailModal");
+    const closeModal = document.querySelector(".close");
+
+    closeModal.addEventListener("click", function () {
+        modal.style.display = "none";
+    });
+
+    window.addEventListener("click", function (event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+}
+
+// ✅ Run everything on page load
+document.addEventListener("DOMContentLoaded", function () {
+    displayAgents(currentPage);
+    setupPagination();
+    setupModal();
+    setupEmailButtons(); // ✅ Make sure buttons work
+
+    // Ensure modals are hidden on page load
+    document.getElementById("emailModal").style.display = "none";
+    document.getElementById("thankYouModal").style.display = "none";
+
+    // Form Submission Handler (Prevents accidental submission)
+    document.querySelector("form").addEventListener("submit", function (event) {
+        event.preventDefault(); // Stop actual form submission
+        document.getElementById("emailModal").style.display = "none";
+        document.getElementById("thankYouModal").style.display = "flex"; 
+    });
+
+    // Close Thank You Modal when clicking the close button
+    document.getElementById("closeThankYouBtn").addEventListener("click", function () {
+        document.getElementById("thankYouModal").style.display = "none";
+    });
+
+    // Close Thank You Modal when clicking (X)
+    document.querySelector(".close-thankyou").addEventListener("click", function () {
+        document.getElementById("thankYouModal").style.display = "none";
+    });
+
+    // Close modal if user clicks outside the modal
+    window.addEventListener("click", function (event) {
+        if (event.target === document.getElementById("thankYouModal")) {
+            document.getElementById("thankYouModal").style.display = "none";
+        }
+    });
+});
+
+// Ensure modals are hidden on refresh
+window.onload = function() {
+    document.getElementById("emailModal").style.display = "none";
+    document.getElementById("thankYouModal").style.display = "none";
+};
+
+   </script>
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {

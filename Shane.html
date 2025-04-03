@@ -3,15 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Propertiesdotcom Rentals</title>
+    <title>Propertiesdotcom Agent</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Galada&family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Pompiere&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="preload" href="img/nyrk2.jpg" as="image">
+
     <style>
-    
+        
+    @import url('https://fonts.googleapis.com/css2?family=Galada&family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Pompiere&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
     *{
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-     
+        font-family: "Poppins", sans-serif;
         overflow-x: hidden;
     }
     body{
@@ -41,6 +48,7 @@
   font-family: Georgia, 'Times New Roman', Times, serif; /* Use the imported font */
   
   
+  
 }
 .mainNav-container{
   display: flex;
@@ -57,14 +65,14 @@
   display: flex;
 justify-content: center;
   gap: 2.5rem;
- 
+  text-align: start;
   width: 100%;
  
 }
 
 .mainnav-links li a {
-  color: white;
-  text-align: center;
+  color: rgb(255, 255, 255);
+  text-align: start;
   text-decoration: none;
   font-size: 2.6rem;
   transition: color 0.3s;
@@ -79,6 +87,8 @@ justify-content: center;
   font-size: 1.3rem;
   color: #a5a5a5;
   cursor: pointer;
+ 
+  
   z-index: 10; /* Ensure it's above other elements */
 }
 
@@ -142,7 +152,6 @@ justify-content: center;
     display: block;
   }
 
-
   .mainnav-links {
     position: fixed;
     top: 0;
@@ -195,7 +204,7 @@ justify-content: center;
 
        
 .hero {
-    background: url("img/nyrkbg1.jpg") no-repeat center center/cover;
+    background: #ccc url("img/nyrk2-small.jpg") no-repeat center center/cover;
     height: 500px;
     position: relative;
     display: flex;
@@ -301,6 +310,7 @@ color: white;
 font-size: 14px;
 text-align: center;
 border-radius: 5px;
+ font-family: "Galada", cursive;
 }
 
 .listing-btn a {
@@ -350,7 +360,7 @@ color: gray;
 }
 
 .listing-price {
-color: red;
+color: rgb(52, 6, 6);
 font-size: 18px;
 }
 
@@ -358,7 +368,7 @@ font-size: 18px;
 .feature-listing-header {
     flex-direction: column;
     align-items: center;
-    text-align: center;
+    text-align: start;
 }
 
 .listing-container {
@@ -397,7 +407,7 @@ border-radius: 10px;
 overflow: hidden;
 width: 300px;
 box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-text-align: center;
+text-align: start;
 }
 
 .featured-card img, .featured-card2 img {
@@ -560,7 +570,7 @@ font-weight: bold;
 
 /* Featured Listings Section */
 .property-section {
-text-align: center;
+text-align: start;
 padding: 50px 20px;
 }
 
@@ -604,7 +614,7 @@ filter: brightness(80%);
 
 .property-details {
 padding: 15px;
-text-align: left;
+text-align: start;
 }
 
 .property-title {
@@ -725,6 +735,10 @@ justify-content: center;
     width: 100%;
     margin: auto;
     padding: 30px 0;
+    text-align:   start;
+    
+}
+.featured-realtors-header{
     text-align: center;
 }
 
@@ -819,13 +833,22 @@ color: white;
 }
 
 .view-all-realtors {
+    display: flex;
+    justify-content: center;
 background: red;
 color: white;
 border: none;
 padding: 10px 20px;
 border-radius: 5px;
 cursor: pointer;
-margin-top: 20px;
+margin: 20px auto;
+
+}
+
+.view-all-realtors a{
+    color: white;
+    text-decoration: none;
+    text-align: center;
 }
 
 .view-all-realtors:hover {
@@ -996,6 +1019,249 @@ padding-bottom: 15px;
 border-bottom: 1px solid gray;
 margin-bottom: 20px;
 }
+@keyframes colorChanges {
+            0% { color: rgb(200, 255, 0); }
+            25% { color: rgb(246, 209, 172); }
+            50% { color: rgb(66, 221, 19); }
+            75% { color: rgb(255, 255, 255); }
+            100% { color: rgb(255, 126, 201); }
+        }
+        .position-relative{
+            animation:  colorChanges 5s infinite;
+            font-size: 19px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .btn-primary {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #d007b5;
+            color: black;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 5px 6px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 200px;
+            text-decoration: none;
+            margin: 0 179px;
+        }
+
+        .btn-primary:hover {
+            background-color: #7ce0af;
+        }
+
+        /* Outline Button */
+        .btn-outline {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 12px 24px;
+            border: 2px solid black;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+            background-color: transparent;
+            color: black;
+        }
+
+        .btn-outline:hover {
+            background-color: black;
+            color: white;
+        }
+
+        /* Arrow icon */
+        .arrows {
+            margin-left: 8px;
+            font-size: 30px;
+            transition: transform 0.3s;
+            color: #e0dddd;
+        }
+
+        .btn-primary:hover .arrows,
+        .btn-outline:hover .arrows {
+            transform: translateX(5px);
+        }
+        .agent-content{
+            background: #ffffff;
+           
+            margin: 1.4rem;
+            color: rgb(0, 0, 0);
+            overflow: hidden;
+        }
+        .agent-content img{
+            width: 17em;
+            overflow: hidden;
+        }
+        .agent-name{
+            margin-top: 12px;
+            color: red;
+            overflow: hidden;
+        }
+        .representative{
+            overflow: hidden;
+        }
+        .contact-btn{
+            margin-top: 1.4rem;
+            width: 9rem;
+            height: 46px;
+            color: #d00;
+            background-color: #d10000;
+            outline: none;
+            border: none;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+            
+        }
+        .contact-btn a{
+            color: white;
+        }
+        .contact-btn button{
+            width: 100%;
+            height: auto;
+            background-color: #d00;
+            border: none;
+            text-align: center;
+            color: white;
+            font-size: 14px;
+        }
+        .contact-btn a{
+            display: flex;
+            color: #ffffff;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            text-decoration: none;
+        }
+        .biography-content{
+            margin-top: 1.4rem;
+        }
+        
+    /* Modal Background */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+/* Modal Content */
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transform: translate(0, 0);
+    position: absolute; /* Change from relative to absolute */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* This centers it perfectly */
+}
+
+/* Close Button */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+/* Form Styling */
+.form-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.form-group {
+    flex: 1 1 calc(50% - 10px);
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Checkbox Section */
+.checj {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.checj p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.4;
+}
+
+/* Submit Button */
+.buttonx {
+    background-color: #ff9100;
+    color: #fff;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+.agentName{
+    overflow: hidden;
+}
+
+.buttonx:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .form-group {
+        flex: 1 1 100%;
+    }
+}
+
+   .row{
+    text-align: start;
+   }
+  
   </style>
 </head>
 
@@ -1054,172 +1320,69 @@ margin-bottom: 20px;
             </div>
         </div>
         
-        <section class="hero">
-            <div class="hero-overlay"></div>
-            <div class="position-relative">Discover the Best Properties in New York</div>
-        </section>
-    
-        <div class="cookie-banner">
-            We use cookies to improve your user experience. <a href="#" class="text-danger">Our Privacy Policy</a>
-            <button class="btn btn-danger ms-2">Got It</button>
+        
+        <div class="agent-content">
+            <div class="img-agent">
+                <img src="img/favagent.jpg" alt="">
+            </div>
+            <div class="biography">
+                <div class="agent-name">
+                    <h4>
+                        Shane Boyle
+                    </h4>
+                </div>
+                <h6 class="representative">
+                    11 times agent of the month with compass luxury now sales representative at propertiesdotcom.
+                </h6>
+
+                <div class="contact-btn">
+                    <button class="contact-button">Contact Shane</button>
+                </div>
+                
+
+                <div class="biography-content">
+                    Shane Boyle brings a wealth of real estate experience to The Agency, where he joins the team as a Broker Associate/ Estates Director in Beverly Hills and the Managing Director for Coachella Valley. Prior to joining The Agency, Shane Boyle owned a franchise overseeing $5 billion in real estate sales. He earned a degree from the Broad College of Business at MSU, allowing him to provide clients with tremendous insight into value and design possibilities when purchasing a home for themselves or for development. He brings a unique perspective to his clients and is passionate about providing high-quality service and informed guidance at every touchpoint. Shane Boyles love of real estate and construction was sparked at the age of ten, when he drove a supply van to construction workers at the subdivisions his father built in Michigan. He went on to flip his first house at the age of 18 and the rest is history. Always looking to give back to the real estate industry,Shane Boyle served as a director and president for the Beverly Hills/Greater Los Angeles Association of Realtors, where he is now a presiding officer overseeing arbitration and ethics hearings. He is a director for the California Association of Realtors and the National Association of Realtors, also serving on their environmental and land use committees. Additionally, he is a director for Smart Coast California, treasurer of the Oswit Land Trust, which works to protect open spaces in and around Palm Springs, and for the Stray Cat Alliance, a group that saves cats in the inner city and provides resources so people can keep their pets. Living by the quote, "We pay for our luxuries with the dividends of our investments, "Shane Boyle recently purchased an airport-style hanger for his car collection. A vegan foodie, he shares his life with his partner Michael, his five adult children, three dogs and a cat or two.
+            </div>
         </div>
+    </div>
+    <div id="emailModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="agentName">Contact Agent</h2>
+            <form id="emailForm"> <!-- FIX: Added form ID -->
+                <div class="form-container">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                </div>
+                <label for="comments">Comments</label>
+                <textarea id="comments" name="comments"></textarea>
+                <div class="checj">
+                    <input type="checkbox" required>
+                    <p>By submitting your information, you consent to receive marketing/promotional content by email, SMS, and/or phone. Message and data rates may apply. You may opt out at any time per our Privacy Policy.</p>
+                </div>
+                <button class="buttonx" type="submit" id="submitBtn">Submit</button>
     
-    
-        <!-- feauture listing -->
-      <!-- Feature Listings Header -->
-    <div class="feature-listing-header">
-        <h4>Featured Listings</h4>
-        <p class="listing-btn"><a href="#">View All Listings for New York City</a></p>
+                <!-- FIX: Status Message Element -->
+                <p id="statusMessage" style="display: none;"></p>
+            </form>
+        </div>
     </div>
     
- 
-
-    <section class="property-section">
-       
-        <div class="property-grid">
-            
-            <!-- Listing 1 -->
-            <a href="clifton-apartRent.html" class="property-card">
-                <img src="img/clifton1.jpg" alt="133 Mulberry Street">
-                <div class="property-details">
-                    <p class="property-title"> #4-F273 Clifton Place #4-F</p>
-                    <p>Brooklyn, NY</p>
-                    <p class="property-price">$1,550,000</p>
-                </div>
-            </a>
-            
-         
-          
-           
-          
-           
-            
-            
-            <a href="west153streetRent.html" class="property-card">
-                <img src="img/royl1.jpg" alt="133 Mulberry Street">
-                <div class="property-details">
-                    <p class="property-title"> 153 East 12th Street, # 40739 East 12th Street, # 407</p>
-                    <p> New York, NY</p>
-                    <p class="property-price">
-                        $2,200,000</p>
-                </div>
-            </a>
-
-            
-            <a href="west333Rent.html" class="property-card">
-                <img src="img/wstNY1.png" alt="133 Mulberry Street">
-                <div class="property-details">
-                    <p class="property-title">  333 West 56th Street #11D New York, NY 10019</p>
-                    <p>Condominium in Hell's Kitchen, Manhattan</p>
-                    <p class="property-price">
-                        $550,000</p>
-                </div>
-            </a>
-           
-
-
-
-            <a href="union-sqRent.html" class="property-card">
-                <img src="img/uniqu1.jpg" alt="133 Mulberry Street">
-                <div class="property-details">
-                    <p class="property-title"> 15 Union Square West #31, Manhattan, NY 10003</p>
-                    <p>Condominium in Flatiron, Manhattan
-                    </p>
-                    <p class="property-price">
-                        $2,000,000</p>
-                </div>
-            </a>
-
-
-            <a href="OaklandRent.html" class="property-card">
-                <img src="img/wst1.jpg" alt="133 Mulberry Street">
-                <div class="property-details">
-                    <p class="property-title"> 18 Oakland Place #2FAM Brooklyn, NY 11226</p>
-                    <p>Multi-Family in Flatbush, Brooklyn</p>
-                    <p class="property-price">$797,500</p>
-                </div>
-            </a>
-
-
-    
-            <!-- Listing 2 -->
-            <a href="main-street-2-bRent.html" class="property-card">
-                <img src="img/mainstrt1.jpg.crdownload" alt="387 South Fifth Street">
-                <div class="property-details">
-                    <p class="property-title">42 Main Street #2-B, Brooklyn, NY 11201</p>
-                    <p>Condominium in DUMBO, Brooklyn</p>
-                    <p class="property-price">$800,000</p>
-                </div>
-            </a>
-    
-            <!-- Listing 3 -->
-            <a href="single-family-615-eastRent.html" class="property-card">
-                <img src="img/single-fam-img2.png.crdownload.png" alt="499 East 23rd Street">
-                <div class="property-details">
-                    <p class="property-title">615 East 19th Street Brooklyn, NY 11230</p>
-                    <p>Brooklyn, NY</p>
-                    <p class="property-price">$750,000</p>
-                </div>
-            </a>
-    
-        </div>
-    </section>
-    
-    
-
-
-    
-    
-    <section class="office-sect">
-        <div class="officex">
-            <H6>Offices</H6>
-        </div>
-    
-        <div class="locate">
-            <div class="newYk">
-                <p>New York</p>
-            </div>
-    
-            <div class="UNIVER">
-                <P>88 University Place, 3rd Floor</P>
-            </div>
-    
-            <div class="newyk2">
-                <p>New York, NY 10003</p>
-            </div>
-    
-            <div class="office-ph">
-                <p>Phone: <span>+1 (212) 235-1123</span></p>
-            </div>
-        </div>
-    </section>
-    
-
-    <section>
-        <div class="contact-container">
-            <!-- Get In Touch Section -->
-            <div class="get-in-touch">
-           
-                <a href="#" class="contact-form-link">CONTACT FORM <span class="arrow">→</span></a>
-                <hr>
-                <p class="brand-text">THE MOST FOLLOWED REAL ESTATE BRAND</p>
-                <div class="social-icons">
-                    <a href="#"><img src="img/fb.jpeg" alt="Facebook"></a>
-                    <a href="#"><img src="img/x.jpeg" alt="X"></a>
-                    <a href="#"><img src="img/yt.jpeg" alt="YouTube"></a>
-                    <a href="#"><img src="img/ig.jpeg" alt="Instagram"></a>
-                    <a href="#"><img src="img/in.jpeg" alt="LinkedIn"></a>
-                </div>
-            </div>
-        
-            <!-- Join The Club Section -->
-            <div class="join-club">
-             
-                <input type="email" placeholder="Enter your email address" class="newsletter-input">
-            </div>
-        </div>
-        
-    </section>
+  
 
     <footer class="footer">
         <div class="footer-header">
@@ -1247,47 +1410,186 @@ margin-bottom: 20px;
         <p>© 2024 The Propertiesdotcom, LLC. The Propertiesdotcom and The Propertiesdotcomlogo are registered trademarks of The Propertiesdotcom, LLC under license to its parents and affiliates. All rights in such marks are reserved by The Propertiesdotcom, LLC.</p>
     </div>
 </footer>
-
-    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-        const toggleButton = document.getElementById("NavmenuToggle");
-        const closeNavButton = document.getElementById("closeNavToggle");
-        const navLinks = document.getElementById("mainnavLinks");
-        const navContainer = document.querySelector(".mainNav-container");
-    
-        // Function to show or hide the navigation menu
-        const toggleNav = () => {
-            navLinks.classList.toggle("show");
-        };
-    
-        // Event listener for the main toggle button
-        if (toggleButton) {
-            toggleButton.addEventListener("click", toggleNav);
-        }
-    
-        // Event listener for the close button inside the menu
-        if (closeNavButton) {
-            closeNavButton.addEventListener("click", toggleNav);
-        }
-    
-        // Close the nav menu when clicking on a link (for smaller screens)
-        const navItems = document.querySelectorAll(".mainnav-links a");
-        navItems.forEach((item) => {
-            item.addEventListener("click", () => {
-                navLinks.classList.remove("show");
-            });
-        });
-    
-        // Close the nav menu when clicking outside of it
-        document.addEventListener("click", function (event) {
-            if (!navContainer.contains(event.target) && !toggleButton.contains(event.target)) {
-                navLinks.classList.remove("show");
-            }
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const toggleButton = document.getElementById("NavmenuToggle");
+    const closeNavButton = document.getElementById("closeNavToggle");
+    const navLinks = document.getElementById("mainnavLinks");
+    const navContainer = document.querySelector(".mainNav-container");
+
+    // Function to show or hide the navigation menu
+    const toggleNav = () => {
+        navLinks.classList.toggle("show");
+    };
+
+    // Event listener for the main toggle button
+    if (toggleButton) {
+        toggleButton.addEventListener("click", toggleNav);
+    }
+
+    // Event listener for the close button inside the menu
+    if (closeNavButton) {
+        closeNavButton.addEventListener("click", toggleNav);
+    }
+
+    // Close the nav menu when clicking on a link (for smaller screens)
+    const navItems = document.querySelectorAll(".mainnav-links a");
+    navItems.forEach((item) => {
+        item.addEventListener("click", () => {
+            navLinks.classList.remove("show");
         });
     });
-      </script>
+
+    // Close the nav menu when clicking outside of it
+    document.addEventListener("click", function (event) {
+        if (!navContainer.contains(event.target) && !toggleButton.contains(event.target)) {
+            navLinks.classList.remove("show");
+        }
+    });
+});
+  </script>
+  <script>
+    const bigText = document.querySelector('.position-relative');
+    const newText = 'Discover the Best Properties in New York';
+    let currentIndex = 0;
+
+    function typeBigText() {  // Renamed function
+        if (currentIndex < newText.length) {
+            bigText.textContent += newText[currentIndex];
+            currentIndex++;
+            setTimeout(typeBigText, 200);
+        }
+    }
+
+    typeBigText();
+</script>
+<script>window.onload = function() {
+    document.querySelector(".hero").style.backgroundImage = 'url("img/nyrk2.jpg")';
+};</script>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    setupEmailButtons(); 
+    setupModal();
+
+    // Hide modals on page load
+    document.getElementById("emailModal").style.display = "none";
+    document.getElementById("thankYouModal").style.display = "none";
+
+    // Handle form submission
+    document.querySelector("form").addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent form from actually submitting
+        document.getElementById("emailModal").style.display = "none";
+        document.getElementById("thankYouModal").style.display = "flex";
+    });
+
+    // Close Thank You Modal when clicking the close button
+    document.getElementById("closeThankYouBtn").addEventListener("click", function () {
+        document.getElementById("thankYouModal").style.display = "none";
+    });
+
+    document.querySelector(".close-thankyou").addEventListener("click", function () {
+        document.getElementById("thankYouModal").style.display = "none";
+    });
+
+    window.addEventListener("click", function (event) {
+        if (event.target === document.getElementById("thankYouModal")) {
+            document.getElementById("thankYouModal").style.display = "none";
+        }
+    });
+});
+
+// Setup modal event listeners
+function setupModal() {
+    const emailModal = document.getElementById("emailModal");
+    const closeModal = document.querySelector(".close");
+
+    closeModal.addEventListener("click", function () {
+        emailModal.style.display = "none";
+    });
+
+    window.addEventListener("click", function (event) {
+        if (event.target === emailModal) {
+            emailModal.style.display = "none";
+        }
+    });
+}
+
+// Setup event listeners for "Contact" buttons
+function setupEmailButtons() {
+    document.querySelectorAll(".contact-button").forEach(button => {
+        button.removeEventListener("click", showModal);
+        button.addEventListener("click", showModal);
+    });
+}
+
+// Show modal when button is clicked
+function showModal(event) {
+    event.preventDefault();
+    const emailModal = document.getElementById("emailModal");
+    
+    if (!emailModal) {
+        console.error("Error: emailModal not found.");
+        return;
+    }
+
+    emailModal.style.display = "block";
+}
+
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+
+<script>
+    (function() {
+    emailjs.init("_9AzGyOLIvvnyVBR7"); // Replace with your actual EmailJS public key
+})();
+
+document.getElementById("emailForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    let formData = new FormData(this);
+
+    let templateParams = {
+        first_name: formData.get("firstName"),
+        last_name: formData.get("lastName"),
+        user_email: formData.get("email"),
+        user_phone: formData.get("phone"),
+        comments: formData.get("comments"),
+    };
+
+    console.log("Sending the following data to EmailJS:", templateParams); // Debugging Log
+
+    emailjs.send("service_8kkzpeh", "template_tve95nx", templateParams) // FIX: Removed colon before template ID
+        .then(response => {
+            console.log("Email sent successfully:", response); // Debugging Log
+            document.getElementById("statusMessage").textContent = "Message sent successfully!";
+            document.getElementById("statusMessage").style.display = "block";
+            document.getElementById("statusMessage").style.color = "green";
+            document.getElementById("emailForm").reset();
+
+            // Hide modal after successful submission
+            setTimeout(() => {
+                document.getElementById("emailModal").style.display = "none";
+                document.getElementById("statusMessage").style.display = "none";
+            }, 3000);
+        })
+        .catch(error => {
+            console.error("EmailJS Error:", error);
+            document.getElementById("statusMessage").textContent = "Failed to send message. Please try again.";
+            document.getElementById("statusMessage").style.display = "block";
+            document.getElementById("statusMessage").style.color = "red";
+        });
+});
+
+</script>
+
+
+
+</div>
 </div>
 </html>
