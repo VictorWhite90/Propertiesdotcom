@@ -596,9 +596,9 @@ textarea {
    <script>
     // Sample agent data
 const agents = [
-    { name: "Shane Boyle", role: "11 times agent of the month with compass luxury now sales representative at propertiesdotcom.", specialty: "Luxury Property Specialist", img: "img/favagent.jpg" },
+    { name: "Shane Boyle", role: "sales representative", specialty: "Luxury Property Specialist", img: "img/favagent.jpg" },
     { name: "Lily Anderson", role: "Agent", specialty: "Helping First-Time Homebuyers", img: "img/real2.jpg" },
-    { name: "Ayanna Richards", role: "Broker Associate", specialty: "Serving Los Angeles & Orange County", img: "img/real13.jpg" },
+    { name: "Ayanna Richards", role: "Broker Associate", specialty: "Serving Los Angeles County", img: "img/real13.jpg" },
     { name: "Desmond Walker", role: "Agent", specialty: "Expert in Waterfront Properties", img: "img/agent2.jpg" },
     { name: "Sade Montgomery", role: "Agent", specialty: "Relocation & Investment Properties", img: "img/real4.jpg" },
     { name: "Benjamin Harper", role: "Agent, South Bay", specialty: "South Bay & Coastal Homes", img: "img/real5.jpg" },
@@ -645,14 +645,14 @@ function displayAgents(page) {
         if (index === 0 && page === 1) {
             agentCardHTML = `
                 <div class="col-md-3">
-                    <a href="f.html" target="_blank" class="agent-link">
+                    <a href="Shane.html" target="_blank" class="agent-link">
                         <div class="agent-box">
                             <img src="${agent.img}" alt="${agent.name}">
                             <div class="details-section">
                                 <h5><em>${agent.name}</em></h5>
                                 <p><strong>${agent.role}</strong></p>
                                 <p>${agent.specialty}</p>
-                                <a href="#" class="contact-button">Email Me</a>
+                                <a href="Shane.html" class="contact-button">Email Me</a>
                             </div>
                         </div>
                     </a>
